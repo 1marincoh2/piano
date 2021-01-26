@@ -3,10 +3,10 @@
     <div class="col-lg-6 offset-lg-3">
       <ul class="list-group">
         <li
-            v-for="(sonido, index) in sonidos"
+            v-for="(statepiano, index) in statepiano.sonidos"
             v-bind:key="index"
             class="list-group-item"
-            v-bind:style="{ 'background-color': sonido }"
+            v-bind:style="{ 'background-color': statepiano }"
             v-on:click="aplicarSonido(index + 1)"
         ></li>
       </ul>
