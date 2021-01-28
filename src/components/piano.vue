@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script lang="js">
+<script lang="ts">
 import { reactive } from "vue";
 
 export default {
@@ -28,12 +28,12 @@ export default {
     });
 
 
-    function aplicarSonido(index) {
+    function aplicarSonido(index: number) {
       const audio = new Audio();
       audio.src = 'assets/note' + index + '.wav';
       audio.load();
       audio.play();
-    };
+    }
 
     return {
 

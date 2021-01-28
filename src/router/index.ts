@@ -1,12 +1,12 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import piano from '.././components/piano.vue'
+import Piano from '@/components/piano.vue'
 
 const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/',
 		name: 'Home',
-		component: piano
-	},
+		component: Piano
+	}
 ]
 
 const router = createRouter({
