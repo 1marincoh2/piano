@@ -15,13 +15,12 @@
 </template>
 
 <script lang="ts">
-import { reactive } from "vue";
+import { defineComponent, reactive } from "vue";
 
-export default {
+const Piano = defineComponent({
   components: {},
   setup() {
     const statepiano = reactive({
-
       sonidos: [
         'red', 'orange', 'yellow', 'green', 'teal', 'blue', 'purple'
       ]
@@ -43,7 +42,8 @@ export default {
     }
 
   }
-}
+})
+export default Piano
 </script>
 <style scoped>
 .list-group-item {
