@@ -22,6 +22,14 @@ module.exports = {
     'space-before-function-paren': 'off',
     'comma-dangle': 'off',
     'padded-blocks': 'off',
-
+    'vue/no-unused-components':'off',
+    '@typescript-eslint/no-unused-vars':'off',
+    'no-trailing-spaces':'off',
+    'eol-last':'off',
+    'indent':'off',
+    'key-spacing':'off',
+    'no-mixed-spaces-and-tabs':'off',
+    'no-tabs':'off'
+  
   }
 }
