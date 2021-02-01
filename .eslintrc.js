@@ -29,7 +29,10 @@ module.exports = {
     'indent':'off',
     'key-spacing':'off',
     'no-mixed-spaces-and-tabs':'off',
-    'no-tabs':'off'
+    'no-tabs':'off',
+    'object-curly-spacing':'off',
+     'comma-spacing':'off',
+     'space-infix-ops':'off'
   
   }
 }
