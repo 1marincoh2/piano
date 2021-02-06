@@ -4,9 +4,8 @@
       <div class="col-m">
         <div class="input-group">
           <span class="input-group-text">INGRESAR DATO</span>
-          <input class="form-control" v-model="state.frut" type="text" />
-
-          <div class="col-m">
+          <input class="form-control"  type="text" v-model="state.frut" />
+            <div class="col-m">
             <button
               type="button"
               class="btn btn-success btn-lg"
@@ -14,13 +13,7 @@
             >
               Agregar
             </button>
-            <button
-              type="button"
-              class="btn btn-danger btn-lg"
-              v-on:click="eliminar()"
-            >
-              eliminar
-            </button>
+           
             <button
               type="button"
               class="btn btn-info btn-lg"
@@ -36,11 +29,22 @@
       <thead>
         <tr>
           <th scope="col">frutas</th>
+          <th scope="col">accion</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr v-for="(frut, index) in state.fruits"
+            v-bind:key="index">
           <td>{{ state.fruits }}</td>
+   <td>
+ <button
+              type="button"
+              class="btn btn-danger btn-lg"
+              v-on:click="Eliminar(state.fruits,index,1)"
+            >
+              eliminar
+            </button>
+            </td>
         </tr>
       </tbody>
     </table>
@@ -53,7 +57,7 @@
       <div class="input-group">
         <span class="input-group-text">Nombre</span>
         <input class="form-control"  v-model="statefrutas.fruta.nombre"   item-text="nombre"
-                      item-value="id"  :items="statefrutas.frutas" type="text" />
+                      item-value="id"  :items="statefrutas.fruta" type="text" />
 
       
         </div>
@@ -62,7 +66,7 @@
       <div class="input-group">
         <span class="input-group-text">color</span>
         <input class="form-control" v-model="statefrutas.fruta.color" item-text="nombre"
-                      item-value="id" :items="statefrutas.frutas" type="text" />
+                      item-value="id" :items="statefrutas.fruta" type="text" />
 
       
         </div>
@@ -72,7 +76,7 @@
       <div class="input-group">
         <span class="input-group-text">precio</span>
         <input class="form-control" v-model="statefrutas.fruta.precio" item-text="nombre"
-                      item-value="id" :items="statefrutas.frutas" type="text" />
+                      item-value="id" :items="statefrutas.fruta" type="text" />
 
       
         </div>
@@ -87,14 +91,7 @@
             Agregar
           </button>
            
-           <button
-              type="button"
-              class="btn btn-danger btn-lg"
-              v-on:click="eliminar1()"
-            >
-            eliminar
-             </button>
-           
+          
          
     </div>
     
@@ -106,6 +103,7 @@
           <th scope="col">nombre</th>
           <th scope="col">color</th>
           <th scope="col">precios</th>
+           <th scope="col">accion</th>
         </tr>
       </thead>
       <tbody>
@@ -114,6 +112,15 @@
           <td> {{fruta.nombre}} </td>
           <td> {{fruta.color}} </td>
           <td> {{fruta.precio}} </td>
+           <td>
+           <button
+              type="button"
+              class="btn btn-danger btn-lg"
+              v-on:click="Eliminar1(statefrutas.frutas,index,1)"
+            >
+            eliminar
+             </button>
+           </td>
         </tr>
       </tbody>
     </table>
@@ -146,8 +153,19 @@ const pushArray = defineComponent({
 
          
 function guardar() {
-  state.fruits.push(state.frut)
+  state.fruits.push(state.frut);
   };
+
+ function Eliminar(array,position,cant){
+        array.splice(position,cant);
+                return array;
+                   };
+ 
+
+
+    
+
+
 function eliminar() {
   state.fruits.pop(); //eliminar el ultimo item agregado
   };
@@ -164,7 +182,14 @@ state.fruits.shift(); //eliminar el primer item agregado
   function eliminar1() {
   statefrutas.frutas.pop(); //eliminar el ultimo item agregado
   };
-    console.log(guardar1)
+  function Eliminar1(arrays,position,cant){
+        arrays.splice(position,cant);
+        return arrays
+
+                
+                   };
+ 
+    
 
 
     return {
@@ -174,7 +199,9 @@ state.fruits.shift(); //eliminar el primer item agregado
     eliminarprimero,
     guardar1,
     statefrutas,
-    eliminar1
+    eliminar1,
+    Eliminar,
+    Eliminar1
 
     }
 

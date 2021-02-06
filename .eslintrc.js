@@ -33,7 +33,8 @@ module.exports = {
     'object-curly-spacing':'off',
      'comma-spacing':'off',
      'space-infix-ops':'off',
-     'spaced-comment':'off'
+     'spaced-comment':'off',
+     'space-before-blocks':'off'
   
   }
 }

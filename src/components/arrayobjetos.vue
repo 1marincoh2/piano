@@ -64,16 +64,16 @@ const ArrayObjetos = defineComponent({
   components: {},
   setup() {
     const statefrutas = reactive({
-      frutas: [],
-      fruta:{
-         nombre:'',
-         precio:0,
-         color:'',
+       frutas:[],
+    fruta:{
+      nombre:'',
+      color:'',
+      precio:0,
 
-      }
+   }
     });
 
-function guardar() {
+function guardar1() {
   statefrutas.frutas.push()
   };
 function eliminar() {
@@ -83,7 +83,7 @@ function eliminar() {
        return {
 
       statefrutas
-      ,
+      
    
 
     }
