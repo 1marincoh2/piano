@@ -32,7 +32,8 @@ module.exports = {
     'no-tabs':'off',
     'object-curly-spacing':'off',
      'comma-spacing':'off',
-     'space-infix-ops':'off'
+     'space-infix-ops':'off',
+     'spaced-comment':'off'
   
   }
 }
