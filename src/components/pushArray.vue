@@ -35,7 +35,7 @@
       <tbody>
         <tr v-for="(frut, index) in state.fruits"
             v-bind:key="index">
-          <td>{{ state.fruits }}</td>
+          <td>{{ frut }}</td>
    <td>
  <button
               type="button"
@@ -107,7 +107,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="fruta of statefrutas.frutas" :key="fruta.nombre" >
+        <tr v-for="fruta of statefrutas.frutas" :key="fruta.id" >
           <td> {{fruta.id}} </td>
           <td> {{fruta.nombre}} </td>
           <td> {{fruta.color}} </td>
